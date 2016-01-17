@@ -10,6 +10,8 @@ if [ ! -f ./docker-1.9/bundles/1.9.1/binary/docker-1.9.1 ]; then
 	exit
 fi
 
+mkdir -p ./backup
+
 systemctl stop docker
 
 # Backup old version, if it exists
