@@ -2,6 +2,7 @@
 	"client_addr": "0.0.0.0",
 	"bootstrap": true,
 	"server": true,
+        "ui_dir" : "/ui",
 	"data_dir": "/data",
 	"leave_on_terminate": true,
 	"dns_config": {
