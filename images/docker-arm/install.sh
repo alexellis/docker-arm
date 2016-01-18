@@ -32,4 +32,4 @@ echo "Running 'systemctl daemon-reload' for you."
 systemctl daemon-reload
 
 echo ""
-echo "Now run \"sudo systemctl restart docker\" and check the output of \"docker info\""
+echo "Now run \"sudo systemctl start docker\" and check the output of \"docker info\""
