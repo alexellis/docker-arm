@@ -3,7 +3,7 @@ var app = express();
 var redis = require('redis');
 
 app.get('/', function(req,res){
-    var client = redis.createClient({"host":process.env.REDIS_PORT_6379_TCP, "port": process.env.REDIS_PORT_6379_TCP_PORT});
+    var client = redis.createClient(process.env.REDIS_PORT_6379_TCP_PORT, process.env.REDIS_PORT_6379_TCP});
     client.incr("hit_count", function() {
         client.get("hit_count", function(err, data) {
             res.json({"message" : "Ping", "count": data});
