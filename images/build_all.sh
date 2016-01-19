@@ -14,6 +14,9 @@ images=(
 #  'docker-arm' # we have already done this
   'redis-arm'
   'swarm-arm'
+  'node4.x-arm'
+  'expresslite4.x'
+  'expressredis4.x'
 )
 
 for project in "${images[@]}"
