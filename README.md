@@ -8,7 +8,9 @@ Build scripts and sample images for Raspberry PI 2 / ARM.
 The repository is to be used along with a tutorial for setting up Docker Swarm on ARM/Raspberry PI.
 
 #### Just want to build Docker 1.91. on Arm?
-*If you would just like to build docker 1.9.1 on an earlier version of Docker then go to images/docker-arm and run `build.sh`. If you do not have an earlier version of Docker available 1.7.1 for Arch Linux Arm is available in `pkg`*
+Would you like to build Docker 1.9.1 on an earlier version of Docker then go to images/docker-arm and run `build.sh`. 
+
+*Docker 1.7.1 is available for Arch Linux Arm in `pkg/`.*
 
 ### The scripts
 The scripts folder provides shortcuts for starting a Docker swarm on the private network space of '192.168.0.0/24'
