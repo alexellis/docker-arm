@@ -31,3 +31,7 @@ docker run --link redis_5:redis -p 3000:3000 -d --label='node_redis'\
 docker run --link redis_6:redis -p 3000:3000 -d --label='node_redis'\
  expressredis4.x
 
+# Run the balancer pinned against the primary node.
+export DOCKER_HOST=tcp://192.168.0.200:2375
+docker rm -f balancer
+docker run -p 80:80 --name balancer -d nginx_dynamic
