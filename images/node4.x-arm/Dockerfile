@@ -5,7 +5,7 @@ RUN apt-get update && \
 
 WORKDIR /root/
 RUN wget \
-  https://nodejs.org/dist/latest-v4.x/node-v4.2.4-linux-armv7l.tar.gz
+  https://nodejs.org/dist/v4.2.4/node-v4.2.4-linux-armv7l.tar.gz
 RUN tar -xvf node-v4.2.4-linux-armv7l.tar.gz -C /usr/local \
   --strip-components=1
 
