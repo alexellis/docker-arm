@@ -9,6 +9,7 @@ app.get('/', function(req,res) {
     client.incr("hit_count", function() {
         client.get("hit_count", function(err, data) {
             res.json({"message" : "Ping", "count": data});
+	    client.quit();
         });
     });
 });

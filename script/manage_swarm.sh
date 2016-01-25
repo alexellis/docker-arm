@@ -13,6 +13,12 @@ echo "Removing old manage container"
 docker rm -f manage
 
 echo "Starting new manage container"
+if [[ -z $swarm_version ]]; then
+        export swarm_version="latest"
+fi;
+
+echo "Using version: $swarm_version"
+export image=alexellis2/swarm-arm:$swarm_version
 
 docker run -d -p 4000:2375 --name manage $image_name manage \
 consul://$consul_addr/swarm
