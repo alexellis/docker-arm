@@ -1,9 +1,7 @@
 #!/bin/bash
 
 export eth0_addr=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
-
 export node_ip=$eth0_addr:2375
-
 export consul_addr=192.168.0.200:8500
 
 echo "Removing old container"
