@@ -1,11 +1,11 @@
 docker-arm
 =================
 
-Build scripts and sample images for Raspberry PI 2 / ARM.
+Build scripts and sample images for Docker and Docker Swarm on Raspberry PI 2 / ARMv7.
 
-### Purpose
+### Commissioning
 
-This repository is to be used along with a tutorial for setting up Docker Swarm on ARM/Raspberry PI. More details to come when article is published.
+This repository is to be used along with a tutorial for setting up Docker Swarm on ARM/Raspberry PI. The article will be published in [Linux User and Developer](http://www.linuxuser.co.uk) magazine in late March. For the time being a condensed version of the technical instructions are available here:
 
 [Follow the condensed guide](https://github.com/alexellis/docker-arm/blob/master/GUIDE.md)
 
@@ -14,6 +14,9 @@ This repository is to be used along with a tutorial for setting up Docker Swarm 
 Would you like to build Docker 1.9.1 on an earlier version of Docker then go to images/docker-arm and run `build.sh`.
 
 *Docker 1.7.1 is available for Arch Linux Arm in `pkg/`.*
+
+![Docker Swarm, originally 5 nodes, now 7](http://blog.alexellis.io/content/images/2015/11/11375892_501978669969619_1957604497_n.jpg)
+
 
 ### The scripts
 
