@@ -17,6 +17,7 @@ Would you like to build Docker 1.9.1 on an earlier version of Docker then go to 
 
 ![Docker Swarm, originally 5 nodes, now 7](http://blog.alexellis.io/content/images/2015/11/11375892_501978669969619_1957604497_n.jpg)
 
+*My original [blog article](http://blog.alexellis.io/docker-swarm-on-raspberry-pi/).*
 
 ### The scripts
 
@@ -39,6 +40,35 @@ A number of images are included which run the following software:
 Also included are two images to build docker itself and the docker-swarm binary:
 - swarm-arm-builder
 - docker-arm
+
+#### Running the example from the tutorial
+
+To run the main example from the tutorial, start a number of linked noderedis4.x and redis-arm containers followed by a nginx_dynamic instance in front of it.
+
+```
+# docker run -p 6379:6379 -d --name redis_1 alexellis2/redis-arm
+# docker run -p 3000:3000 -d \ --label=’node_redis’ \
+--link redis_1:redis \
+expressredis4.x
+```
+Repeat above increment redis_1 to redis_2 etc on each node.
+
+Start the nginx container which will query the swarm and then set up a config file for load balancing:
+```
+# docker run -d --name=balancer -p 80:80 nginx_dynamic
+```
+
+Finally use Apache Bench to get some numbers:
+
+```
+# ab -n 1000 -c 10 http://192.168.0.200/
+...
+Concurrency Level:     10
+Time taken for tests:  2.593 seconds
+Requests per second:   385.65 [#/sec] (mean)
+...
+```
+
 
 
 Copyright Alex Ellis 2016 (@alexellis)
