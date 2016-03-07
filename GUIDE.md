@@ -2,7 +2,7 @@
 
 This repository accompanies a tutorial commissioned by Linux User and Developer magazine.
 
-I am providing an abbreviated guide of the instructions for advanced users - this assumes you have already set up Arch Linux and provided a static IP address. You can also use this
+I am providing an abbreviated guide of the instructions for advanced users - this assumes you have already set up Arch Linux and provided a static IP address. You can also use this along with the printed magazine to save on typing.
 
 * Install Linux tools and utilities
 
