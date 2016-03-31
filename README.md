@@ -1,23 +1,30 @@
 docker-arm
 =================
 
-Build scripts and sample images for Docker and Docker Swarm on Raspberry PI 2 / ARMv7.
+Build Docker, Swarm and native images for the Raspberry PI 2/3 and ARMv7 Architecture.
 
-### Commissioning
-
-This repository is to be used along with a tutorial for setting up Docker Swarm on ARM/Raspberry PI. The article will be published in [Linux User and Developer](http://www.linuxuser.co.uk) magazine in late March. For the time being a condensed version of the technical instructions are available here:
-
-[Follow the condensed guide](https://github.com/alexellis/docker-arm/blob/master/GUIDE.md)
-
-#### Just want to build Docker 1.9.1 on ARM?
-
-Would you like to build Docker 1.9.1 on an earlier version of Docker then go to images/docker-arm and run `build.sh`.
-
-*Docker 1.7.1 is available for Arch Linux Arm in `pkg/`.*
 
 ![Docker Swarm, originally 5 nodes, now 7](http://blog.alexellis.io/content/images/2015/11/11375892_501978669969619_1957604497_n.jpg)
 
-*My original [blog article](http://blog.alexellis.io/docker-swarm-on-raspberry-pi/).*
+### Commissioning
+
+This repository was commissioned to support a tutorial published in [Linux User and Developer](http://www.linuxuser.co.uk) issue 163 March 2016. [View now](https://www.imagineshop.co.uk/magazines/linuxuser/linux-user-and-developer-issue-163.html)
+
+In the article I outline the case for Docker Swarm on the Raspberry PI and into detail on how to recompile the latest version of Docker from an older (issue-free) version. We then build Docker Swarm itself and go on to build out some test images for Node.js, Redis and Consul.
+
+I have provided a much condensed and abbreviated version of the steps in this guide:
+
+[Follow the condensed guide](https://github.com/alexellis/docker-arm/blob/master/GUIDE.md)
+
+#### The blog entry
+
+Read more about writing for Linux User and Developer magazine on my [blog article](http://blog.alexellis.io/linux-user-developer-magazine/).
+
+#### TLDR; Just want to build Docker 1.9.1 on ARM?
+
+Would you like to build Docker 1.9.1? Then we can make use of a stable 1.7.1 version for that purpose, clone this repository and then go into images/docker-arm and execute `build.sh`. This will produce a fully-compatible with ARM statically-linked binary to use as per the official Docker documentation.
+
+*Docker 1.7.1 is available for Arch Linux Arm in `pkg/`.*
 
 ### The scripts
 
