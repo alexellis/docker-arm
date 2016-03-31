@@ -8,9 +8,11 @@ Build Docker, Swarm and native images for the Raspberry PI 2/3 and ARMv7 Archite
 
 ### Commissioning
 
-This repository was commissioned to support a tutorial published in [Linux User and Developer](http://www.linuxuser.co.uk) issue 163 March 2016. [View now](https://www.imagineshop.co.uk/magazines/linuxuser/linux-user-and-developer-issue-163.html)
+This repository was commissioned to support a tutorial published in [Linux User and Developer](http://www.linuxuser.co.uk) issue 163 March 2016.
 
-In the article I outline the case for Docker Swarm on the Raspberry PI and into detail on how to recompile the latest version of Docker from an older (issue-free) version. We then build Docker Swarm itself and go on to build out some test images for Node.js, Redis and Consul.
+[Issue 163 of Linux User and Developer Magazine](https://www.imagineshop.co.uk/magazines/linuxuser/linux-user-and-developer-issue-163.html)
+
+In the article I outline the case for Docker Swarm on the Raspberry PI and into detail on how to recompile the latest version of Docker from an older (issue-free) version. We then build Docker Swarm itself and go on to build out some test images for Node.js, Redis and Consul. Finally we put it all together and use Apache-Bench to load-test the solution with Nginx doing load-balancing for us.
 
 I have provided a much condensed and abbreviated version of the steps in this guide:
 
