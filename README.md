@@ -4,7 +4,7 @@ docker-arm
 Build Docker, Swarm and native images for the Raspberry PI 2/3 and ARMv7 Architecture.
 
 
-![Docker Swarm, originally 5 nodes, now 7](http://blog.alexellis.io/content/images/2015/11/11375892_501978669969619_1957604497_n.jpg)
+![Docker Swarm, originally 5 nodes, now 7](http://blog.alexellis.io/content/images/2016/03/12751465_202678110091142_997768928_n.jpg)
 
 ### Commissioning
 
