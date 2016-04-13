@@ -1,4 +1,4 @@
-docker-arm
+Docker on ARM
 =================
 
 **Build Docker, Swarm and native images for the Raspberry PI 2/3 and ARMv7 Architecture. Now featuring PI Zero instructions (ARMv6).**
