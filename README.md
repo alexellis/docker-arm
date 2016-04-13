@@ -7,28 +7,25 @@ This repository was commissioned to support a tutorial published in [Issue 163 o
 
 ![Docker Swarm, originally 5 nodes, now 7](http://blog.alexellis.io/content/images/2016/03/12751465_202678110091142_997768928_n.jpg)
 
-> ### If you are following the Linux Developer and User tutorial
+### If you are following the Linux Developer and User tutorial
 
 ####[Magazine tutorial](LUD.md)
 
 I make the case for Docker Swarm on the Raspberry PI. We walk through fully configuring Arch Linux ARM, we install Docker, then rebuild it from the latest source. Then we go on to build specific images for ARM: Swarm, Consul, Redis, Node.js etc. Then we starting the Swarm, check the nodes and run a distributed web application with a load-balancer.
 
-> ### Read all about it on the blog
+### Read all about it on the blog
 
-#### [Blog post](http://blog.alexellis.io/linux-user-developer-magazine/)
+![Published print article](http://blog.alexellis.io/content/images/2016/03/magazine_thumbnail.png)
 
 This article was retweeted by @Docker on Mar 31 2016, so head over to the blog and have a read.
 
 
-> ### What else is here?
+#### [Read the blog post](http://blog.alexellis.io/linux-user-developer-magazine/)
+
+
+### What else is here?
 
 If you want to try Docker or Docker Swarm on ARM or are already using it, then you will find these resources useful:
-
-* `/script`
-
-Here you find a list of scripts used in the magazine tutorial to quickly set up a full Docker Swarm on Raspberry PI using `consul` as the discovery service.
-
-See for instance: `auto_join_swarm.sh` and `start_consul.sh`
 
 * `/images`
 
@@ -43,11 +40,17 @@ No official Docker images work on the ARM architecture because they contain bina
 * Node.js 4.x
 
 
+* `/script`
+
+Here you find a list of scripts used in the magazine tutorial to quickly set up a full Docker Swarm on Raspberry PI using `consul` as the discovery service.
+
+See for instance: `auto_join_swarm.sh` and `start_consul.sh`
+
 * `/pkg`
 
 When this tutorial was first published there was no working package available in the Arch Linux ARM (ALARM) repository for Docker, so you can find Docker 1.7.1 here which at the time was used to build the latest from Github.
 
-> ### Feedback & Questions
+### Feedback & Questions
 
 Please leave comments and questions over on my blog at:
 
