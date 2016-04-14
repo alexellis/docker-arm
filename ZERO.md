@@ -1,6 +1,7 @@
 ## Docker Swarm on PI Zero
 
 **Overview**
+
 With the release of the 5 dollar PI Zero computer, building a Docker Swarm has never been cheaper.
 
 In this quick-start guide we will configure Arch Linux ARM, install Docker and then use a laptop or another PC to create a swarm which all our PI Zeros can join. There are several ways of doing this, but we'll keep things simple and give you the opportunity to take it further later on. I've provided some sample images for Node.js, Redis, Ruby and Python so once you're up and running it's over to you to create something awesome.
