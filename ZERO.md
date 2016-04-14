@@ -2,7 +2,7 @@
 
 **Overview**
 
-With the release of the 5 dollar PI Zero computer, building a Docker Swarm has never been cheaper.
+With the release of the 5 dollar PI Zero computer, there has never been a better time to start building a Docker Swarm. Whether you want to try distributed computing or just build something cool with your PI Zeros.
 
 In this quick-start guide we will configure Arch Linux ARM, install Docker and then use a laptop or another PC to create a swarm which all our PI Zeros can join. There are several ways of doing this, but we'll keep things simple and give you the opportunity to take it further later on. I've provided some sample images for Node.js, Redis, Ruby and Python so once you're up and running it's over to you to create something awesome.
 
