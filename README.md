@@ -19,9 +19,13 @@ I make the case for Docker Swarm on the Raspberry PI. We walk through fully conf
 
 This article was retweeted by @Docker on Mar 31 2016, so head over to the blog and have a read.
 
+* [Read the blog post](http://blog.alexellis.io/linux-user-developer-magazine/)
 
-#### [Read the blog post](http://blog.alexellis.io/linux-user-developer-magazine/)
+#### New Quick-start Docker/Swarm on PI Zero Tutorial
 
+Follow this quick-start guide to get Docker and/or Swarm up and running on your PI Zeros right away.
+
+* [Quick-start Docker/Swarm on PI Zero Tutorial](ZERO.md)
 
 ### What else is here?
 
