@@ -1,5 +1,9 @@
 ## Docker Swarm on PI Zero
 
+**Feedback/questions**
+
+Please **Star** the docker-arm repository to show your support. For questions send me a comment on the [blog](http://blog.alexellis.io/dockerswarm-pizero/) and for bugs/problems raise an issue on the repository.
+
 **Overview**
 
 With the release of the 5 dollar PI Zero computer, there has never been a better time to start building a Docker Swarm. Whether you want to try distributed computing or just build something cool with your PI Zeros.
