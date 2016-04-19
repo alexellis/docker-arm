@@ -109,7 +109,7 @@ Most Docker images are only available for regular PCs (i.e. x64) so for the Rasp
 docker pull alexellis2/swarm-arm:v6
 ```
 
-Now we will edit the Docker daemon's configuration to allow any computer on our network to control it. Please beware that this setting should only be used within your internal network, if you wanted to use it over the Internet then look into TLS encryption on the Docker homepage.
+Now we will edit the Docker daemon's configuration to allow any computer on our network to control it. Please beware that this setting should only be used within your internal network, if you wanted to use it over the Internet then look into TLS encryption in Docker documentation.
 
 Edit `/usr/lib/systemd/system/docker.service` and on the line `ExecStart` add the following:
 
@@ -207,7 +207,7 @@ $ mkdir -p ruby_hello_world
 $ cd ruby_hello_world
 ```
 
-Add the folowing main.rb file:
+Add the following main.rb file:
 
 ```
 who = "Ruby"
@@ -242,7 +242,7 @@ This is the end of the quick-start tutorial. You now have a fully working PI Zer
 
 ### See also:
 
-Additional instructions are available below including Raspberry PI 2/3:
+Additional instructions are available for the Raspberry PI 2/3, including how to set up a Swarm using *Consul* for discovery instead of using the hard-coded `nodes://` method.
 
 [Docker for Raspberry PI tutorial](http://blog.alexellis.io/linux-user-developer-magazine/)
 
