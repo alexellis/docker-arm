@@ -1,4 +1,4 @@
-Dockerfile for unicorn HAT and pHAT from Pimoroni
+### Dockerfile for unicorn HAT and pHAT from Pimoroni
 
 #### Building
 
