@@ -16,6 +16,10 @@ This will start up the phat rainbow example, but if you use `FROM alexellis2/uni
 
 [Live video](https://vine.co/v/iETMIpKgugt)
 
+#### Also available on Docker Hub:
+
+[alexellis2/unicorn-hat:latest](https://hub.docker.com/r/alexellis2/unicorn-hat/)
+
 #### See also:
 
 [Pimoroni/explorerhat code](https://github.com/pimoroni/unicorn-hat)
