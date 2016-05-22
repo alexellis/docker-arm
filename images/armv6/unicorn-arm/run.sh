@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker run --privileged alexellis2/unicorn-hat
+docker run --privileged unicorn-hat
