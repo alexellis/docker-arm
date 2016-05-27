@@ -23,7 +23,28 @@ You will need:
 
 ### Step 1
 
-**Installing Arch Linux Arm**
+#### Raspbian
+
+I would recommend starting with a fresh SD card and Arch Linux, but Rasbpian is also supported with a work-around to enable the latest version of Docker. The version in Jessie's apt repository is going to be out of date.
+
+**Prepare the kernel modules and OS**
+
+Download the latest Hypriot build of Docker, compatible with Jessie:
+
+```
+$ wget https://packagecloud.io/Hypriot/Schatzkiste/packages/raspbian/jessie/docker-hypriot_1.11.1-1_armhf.deb/download
+```
+
+Now prepare the kernel modules and install extra packages.
+
+```
+sudo apt-get update && sudo apt-get install libapparmor1
+echo overlay | sudo tee -a /etc/modules
+sudo modprobe overlay
+sudo dpkg -i docker-hypriot_1.11.1_armhf.deb
+```
+
+#### Arch Linux
 
 Arch Linux ARM (aka ALARM) is a minimal Raspberry PI Linux distribution which gives us a great platform to run Docker. It also runs a rolling-release meaning the packages available in its *pacman* software manager are always bleeding-edge.
 
@@ -34,6 +55,8 @@ Head over to https://archlinuxarm.org/platforms/armv6/raspberry-pi and click the
 ### Step 2
 
 **Booting and configuring network**
+
+*From this point continue with the steps that will work with either Raspbian or Arch Linux ARM*
 
 Arch Linux ARM does not come with any wi-fi packages pre-installed, but if you have an Ethernet adapter this will automatically connect to your network and obtain an IP address via DHCP. To find the IP address of your PI you can either go to the administration page of your ISP's router or run the `nmap` network scanner.
 
