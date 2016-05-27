@@ -117,7 +117,18 @@ Edit `/usr/lib/systemd/system/docker.service` and on the line `ExecStart` add th
 -H tcp://0.0.0.0:2375
 ```
 
-Now reboot the system.
+Your line will now look a bit like this:
+
+```
+ExecStart=/usr/bin/docker daemon -H fd:// -H tcp://0.0.0.0:2375 
+```
+
+Now reboot the system or reload the configuration with:
+
+```
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
 
 ### Step 6
 
