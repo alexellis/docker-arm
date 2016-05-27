@@ -168,14 +168,14 @@ i.e.
 On a PC:
 
 ```
-docker run --name manage -p 2376:2375 manage -d swarm manage nodes://192.168.0.2:2375,192.168.0.3:2375
+docker run -d --name manage -p 2376:2375 swarm manage nodes://192.168.0.2:2375,192.168.0.3:2375
 ```
 
 
 On a PI Zero:
 
 ```
-docker run --name manage -p 2376:2375 manage -d alexellis2/swarm-arm:v6 manage nodes://192.168.0.2:2375,192.168.0.3:2375
+$ docker run -d --name manage -p 2376:2375 alexellis2/swarm-arm:v6 manage nodes://192.168.0.2:2375,192.168.0.3:2375
 ```
 
 To check on the status of the swarm manager:
