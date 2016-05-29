@@ -21,6 +21,10 @@ You will need:
 * At least one Ethernet adapter
 * A computer or Raspberry PI running Linux
 
+This is an example of a fully working cluster, more details available in my [IoT cluster blog post](http://blog.alexellis.io/iot-docker-cluster/)
+
+![A fully working cluster](https://pbs.twimg.com/media/CjDxIg-WEAAQ1dk.jpg:medium)
+
 ### Step 1
 
 #### Raspbian
