@@ -77,6 +77,25 @@ The PI's default username and password are: alarm/alarm and root/root. By defaul
 
 Make a note of the IP address of the PI Zero and make sure you change the default passwords immediately.
 
+**Configure Static IP address (optional)**
+
+This assumes a USB ethernet adapter named eth0. If you would like to set up an IP address that is predictable and which won't change, then edit the following file remembering to change the IP address to something that suits your needs.
+
+File: /etc/systemd/network/eth0.network
+
+```
+[Match]
+Name=eth0
+
+[Network]
+Address=192.168.0.3/24
+Gateway=192.168.0.1
+DNS=8.8.8.8
+IPForward=ipv4
+```
+
+This optional step needs a reboot and has only been tested on Arch Linux.
+
 ### Step 4
 
 **Configure Arch**
