@@ -6,9 +6,9 @@ Please **Star** the docker-arm repository to show your support. For questions se
 
 **Overview**
 
-With the release of the 5 dollar PI Zero computer, there has never been a better time to start building a Docker Swarm. Whether you want to try distributed computing or just build something cool with your PI Zeros.
+With the release of the 5 dollar [Raspberry Pi Zero computer](https://shop.pimoroni.com/collections/raspberry-pi/products/raspberry-pi-zero), there has never been a better time to start building a Docker Swarm. Whether you want to try distributed computing or just build something cool with your Pi Zeros.
 
-In this quick-start guide we will configure Arch Linux ARM, install Docker and then use a laptop or another PC to create a swarm which all our PI Zeros can join. There are several ways of doing this, but we'll keep things simple and give you the opportunity to take it further later on. I've provided some sample images for Node.js, Redis, Ruby and Python so once you're up and running it's over to you to create something awesome.
+In this quick-start guide we will configure Arch Linux ARM or Raspbian, install Docker and then use a laptop or another PC to create a swarm which all our Pi Zeros can join. There are [several ways](https://docs.docker.com/swarm/discovery/) of doing this (called swarm discovery), but we'll keep things simple with a hard-coded list of swarm agents. You can take it further later on through the [Swarm Discovery documentation](https://docs.docker.com/swarm/discovery/). I've provided some [sample images](https://github.com/alexellis/docker-arm/tree/master/images/armv6) for Node.js, Redis, Ruby and Python so once you're up and running it's over to you to create something awesome.
 
 * Install & configure Arch Linux ARM
 * Install Docker
@@ -279,17 +279,26 @@ ADD ./main.rb ./
 CMD ["ruby", "main.rb"]
 ```
 
+Let's start the Ruby application, the swarm manager will find a suitable agent and start executing it.
+
 ```
 $ docker build -t ruby_hello_world:v6 .
-$ docker run ruby_hello_world:v6
+$ docker run --name ruby_hello_1 ruby_hello_world:v6
 Hello Ruby!
 ```
 
+Now if you want to find out more information about the container that was started use `docker inspect` and the name of the container which we specified:
+
+```
+$ docker inspect ruby_hello_1
+```
+
+
 **Spreading images between the Swarm**
 
-The easiest way to spread your images between the Swarm is to push them to the Docker Hub with `docker push` then log into each PI and use `docker pull` to bring it into the local library. If you build an image pointing at the swarm manager then the manager will pick a random PI Zero to do the build.
+The easiest way to spread your images between the Swarm is to push them to the Docker Hub with `docker push` then log into each PI and use `docker pull` to bring it into the local library. If you build an image pointing at the swarm manager then the manager will pick a random Pi Zero to do the build.
 
-The alternative method is to log into each PI and build the image from source as we did above.
+The alternative method is to log into each Pi and build the image from source as we did above.
 
 ### Wrapping up
 
@@ -297,9 +306,11 @@ This is the end of the quick-start tutorial. You now have a fully working PI Zer
 
 [alexellis's ARMv6 Images](https://github.com/alexellis/docker-arm/tree/master/images/armv6)
 
+Questions? Send me a message on the blog or through Twitter at @alexellisuk.
+
 ### See also:
 
-Additional instructions are available for the Raspberry PI 2/3, including how to set up a Swarm using *Consul* for discovery instead of using the hard-coded `nodes://` method.
+Additional instructions are available for the Raspberry Pi 2/3, including how to set up a Swarm using *Consul* for discovery instead of using the hard-coded `nodes://` method.
 
 [Docker for Raspberry PI tutorial](http://blog.alexellis.io/linux-user-developer-magazine/)
 
