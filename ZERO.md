@@ -6,9 +6,9 @@ Please **Star** the docker-arm repository to show your support. For questions se
 
 **Overview**
 
-With the release of the 5 dollar PI Zero computer, there has never been a better time to start building a Docker Swarm. Whether you want to try distributed computing or just build something cool with your PI Zeros.
+With the release of the 5 dollar [Raspberry Pi Zero computer](https://shop.pimoroni.com/collections/raspberry-pi/products/raspberry-pi-zero), there has never been a better time to start building a Docker Swarm. Whether you want to try distributed computing or just build something cool with your Pi Zeros.
 
-In this quick-start guide we will configure Arch Linux ARM, install Docker and then use a laptop or another PC to create a swarm which all our PI Zeros can join. There are several ways of doing this, but we'll keep things simple and give you the opportunity to take it further later on. I've provided some sample images for Node.js, Redis, Ruby and Python so once you're up and running it's over to you to create something awesome.
+In this quick-start guide we will configure Arch Linux ARM or Raspbian, install Docker and then use a laptop or another PC to create a swarm which all our Pi Zeros can join. There are [several ways](https://docs.docker.com/swarm/discovery/) of doing this (called swarm discovery), but we'll keep things simple with a hard-coded list of swarm agents. You can take it further later on through the [Swarm Discovery documentation](https://docs.docker.com/swarm/discovery/). I've provided some [sample images](https://github.com/alexellis/docker-arm/tree/master/images/armv6) for Node.js, Redis, Ruby and Python so once you're up and running it's over to you to create something awesome.
 
 * Install & configure Arch Linux ARM
 * Install Docker
@@ -21,9 +21,34 @@ You will need:
 * At least one Ethernet adapter
 * A computer or Raspberry PI running Linux
 
+This is an example of a fully working cluster, more details available in my [IoT cluster blog post](http://blog.alexellis.io/iot-docker-cluster/)
+
+![A fully working cluster](https://pbs.twimg.com/media/CjDxIg-WEAAQ1dk.jpg:medium)
+
 ### Step 1
 
-**Installing Arch Linux Arm**
+#### Raspbian
+
+I would recommend starting with a fresh SD card and Arch Linux, but Rasbpian is also supported with a work-around to enable the latest version of Docker. The version in Jessie's apt repository is going to be out of date.
+
+**Prepare the kernel modules and OS**
+
+Download the latest Hypriot build of Docker, compatible with Jessie:
+
+```
+$ wget https://packagecloud.io/Hypriot/Schatzkiste/packages/raspbian/jessie/docker-hypriot_1.11.1-1_armhf.deb/download
+```
+
+Now prepare the kernel modules and install extra packages.
+
+```
+sudo apt-get update && sudo apt-get install libapparmor1
+echo overlay | sudo tee -a /etc/modules
+sudo modprobe overlay
+sudo dpkg -i docker-hypriot_1.11.1_armhf.deb
+```
+
+#### Arch Linux
 
 Arch Linux ARM (aka ALARM) is a minimal Raspberry PI Linux distribution which gives us a great platform to run Docker. It also runs a rolling-release meaning the packages available in its *pacman* software manager are always bleeding-edge.
 
@@ -34,6 +59,8 @@ Head over to https://archlinuxarm.org/platforms/armv6/raspberry-pi and click the
 ### Step 2
 
 **Booting and configuring network**
+
+*From this point continue with the steps that will work with either Raspbian or Arch Linux ARM*
 
 Arch Linux ARM does not come with any wi-fi packages pre-installed, but if you have an Ethernet adapter this will automatically connect to your network and obtain an IP address via DHCP. To find the IP address of your PI you can either go to the administration page of your ISP's router or run the `nmap` network scanner.
 
@@ -53,6 +80,25 @@ $ ssh alarm@192.168.0.2
 The PI's default username and password are: alarm/alarm and root/root. By default `sudo` is an optional package, which you can install through `pacman`. Pacman is the equivalent to `apt-get` on Raspbian.
 
 Make a note of the IP address of the PI Zero and make sure you change the default passwords immediately.
+
+**Configure Static IP address (optional)**
+
+This assumes a USB ethernet adapter named eth0. If you would like to set up an IP address that is predictable and which won't change, then edit the following file remembering to change the IP address to something that suits your needs.
+
+File: /etc/systemd/network/eth0.network
+
+```
+[Match]
+Name=eth0
+
+[Network]
+Address=192.168.0.3/24
+Gateway=192.168.0.1
+DNS=8.8.8.8
+IPForward=ipv4
+```
+
+This optional step needs a reboot and has only been tested on Arch Linux.
 
 ### Step 4
 
@@ -117,7 +163,18 @@ Edit `/usr/lib/systemd/system/docker.service` and on the line `ExecStart` add th
 -H tcp://0.0.0.0:2375
 ```
 
-Now reboot the system.
+Your line will now look a bit like this:
+
+```
+ExecStart=/usr/bin/docker daemon -H fd:// -H tcp://0.0.0.0:2375 
+```
+
+Now reboot the system or reload the configuration with:
+
+```
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
 
 ### Step 6
 
@@ -134,14 +191,14 @@ i.e.
 On a PC:
 
 ```
-docker run --name -p 2376:2375 manage -d swarm manage nodes://192.168.0.2:2375,192.168.0.3:2375,
+docker run -d --name manage -p 2376:2375 swarm manage nodes://192.168.0.2:2375,192.168.0.3:2375
 ```
 
 
 On a PI Zero:
 
 ```
-docker run --name -p 2376:2375 manage -d alexellis2/swarm-arm:v6 manage nodes://192.168.0.2:2375,192.168.0.3:2375
+$ docker run -d --name manage -p 2376:2375 alexellis2/swarm-arm:v6 manage nodes://192.168.0.2:2375,192.168.0.3:2375
 ```
 
 To check on the status of the swarm manager:
@@ -222,17 +279,26 @@ ADD ./main.rb ./
 CMD ["ruby", "main.rb"]
 ```
 
+Let's start the Ruby application, the swarm manager will find a suitable agent and start executing it.
+
 ```
 $ docker build -t ruby_hello_world:v6 .
-$ docker run ruby_hello_world:v6
+$ docker run --name ruby_hello_1 ruby_hello_world:v6
 Hello Ruby!
 ```
 
+Now if you want to find out more information about the container that was started use `docker inspect` and the name of the container which we specified:
+
+```
+$ docker inspect ruby_hello_1
+```
+
+
 **Spreading images between the Swarm**
 
-The easiest way to spread your images between the Swarm is to push them to the Docker Hub with `docker push` then log into each PI and use `docker pull` to bring it into the local library. If you build an image pointing at the swarm manager then the manager will pick a random PI Zero to do the build.
+The easiest way to spread your images between the Swarm is to push them to the Docker Hub with `docker push` then log into each PI and use `docker pull` to bring it into the local library. If you build an image pointing at the swarm manager then the manager will pick a random Pi Zero to do the build.
 
-The alternative method is to log into each PI and build the image from source as we did above.
+The alternative method is to log into each Pi and build the image from source as we did above.
 
 ### Wrapping up
 
@@ -240,9 +306,11 @@ This is the end of the quick-start tutorial. You now have a fully working PI Zer
 
 [alexellis's ARMv6 Images](https://github.com/alexellis/docker-arm/tree/master/images/armv6)
 
+Questions? Send me a message on the blog or through Twitter at @alexellisuk.
+
 ### See also:
 
-Additional instructions are available for the Raspberry PI 2/3, including how to set up a Swarm using *Consul* for discovery instead of using the hard-coded `nodes://` method.
+Additional instructions are available for the Raspberry Pi 2/3, including how to set up a Swarm using *Consul* for discovery instead of using the hard-coded `nodes://` method.
 
 [Docker for Raspberry PI tutorial](http://blog.alexellis.io/linux-user-developer-magazine/)
 
