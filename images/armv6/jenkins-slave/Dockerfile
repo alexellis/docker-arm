@@ -49,6 +49,9 @@ RUN curl -s \
 https://packagecloud.io/install/repositories/Hypriot/Schatzkiste/script.deb.sh | sudo bash
 RUN sudo apt-get install docker-hypriot=1.11.1-1
 RUN usermod jenkins -aG docker
+
+RUN apt-get install make
+
 EXPOSE 22
 USER jenkins
 WORKDIR /home/jenkins/
