@@ -51,4 +51,7 @@ RUN sudo apt-get install docker-hypriot=1.11.1-1
 RUN usermod jenkins -aG docker
 EXPOSE 22
 USER jenkins
-CMD ["sudo", "/usr/sbin/sshd", "-D"]
+WORKDIR /home/jenkins/
+ADD ./init.sh ./init.sh
+
+CMD ["./init.sh"]
