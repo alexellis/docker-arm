@@ -5,7 +5,8 @@ USER root
 RUN apt-get update && apt-get -qy install git nano curl wget build-essential ca-certificates
 
 RUN wget --no-check-certificate \
-        http://dave.cheney.net/paste/go1.6.2.linux-arm.tar.gz
+   https://storage.googleapis.com/golang/go1.6.2.linux-armv6l.tar.gz
+
 RUN tar -xf go*.tar.gz -C /usr/local/
 
 ENV PATH \
