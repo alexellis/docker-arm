@@ -1,4 +1,4 @@
 #!/bin/sh
 
-docker build -t alexellis2/nginx_arm:v6 .
+docker build -t alexellis2/nginx-arm:v6 .
 

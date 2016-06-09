@@ -5,7 +5,7 @@ var labelFilter = process.env.LABEL_FILTER;
 
 // Query the Docker Remote API directly.
 var ops = {
- uri: "http://"+warmUri+"/containers/json?all=0&size=1",
+ uri: "http://"+swarmUri+"/containers/json?all=0&size=1",
  method: "GET"
 };
 
