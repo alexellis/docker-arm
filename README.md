@@ -1,13 +1,15 @@
 Docker on ARM
 =================
 
-After a lot of hard work it became official and Docker came to the Raspberry Pi. You can read more about it on the Raspberry Pi blog which links to various tutorials I've written this year.
+After a lot of hard work it became official and Docker came to the Raspberry Pi.
 
 In this repository you will find:
 
 * a curated list of links for getting started with Docker on Pi
 * tutorials around Swarm and Swarm Mode
 * ARM specific images to get you up and running in no time.
+
+If you've not read the Raspberry Pi blog post then you can see it here:
 
 * [Docker comes to the Raspberry Pi](https://www.raspberrypi.org/blog/docker-comes-to-raspberry-pi/)
 
