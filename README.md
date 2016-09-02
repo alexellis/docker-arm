@@ -35,8 +35,7 @@ No official Docker images work on the ARM architecture because they contain bina
 * Redis
 * Node.js 4.x
 * Several examples of GPIO
-* Building Classic Swarm itself
-* Building Docker itself
+* Build Docker itself
 
 Contributions are welcome, please open an issue with your suggestion and once confirmed I'll be happy to merge the changes. You can also find a number of additional images maintained by the [Hypriot team](https://twitter.com/hypriottweets).
 
@@ -58,7 +57,7 @@ Check out my video where I set up a swarm with 7 different Raspbery Pi 2s and de
 
 For an overview of Swarm Mode:
 
-* [Scale a real microservice with Docker 1.12 Swarm Mode](http://blog.alexellis.io/docker-swarm-mode-part1/
+* [Scale a real microservice with Docker 1.12 Swarm Mode](http://blog.alexellis.io/docker-swarm-mode-part1/)
 * [Learn Docker Swarm Mode - scale in 5 minutes!](http://blog.alexellis.io/microservice-swarm-mode/)
 
 Mano Marks put together a ReactJS [Swarm Visualizer tool](https://github.com/ManoMarks/docker-swarm-visualizer). It was originally demoed at Dockercon over three huge screens. He's accepting contributions so this is a great chance to pitch in.
