@@ -13,7 +13,7 @@ If you've not read the Raspberry Pi blog post then you can see it here:
 
 * [Docker comes to the Raspberry Pi](https://www.raspberrypi.org/blog/docker-comes-to-raspberry-pi/)
 
-![Docker Swarm, originally 5 nodes, now 7](http://blog.alexellis.io/content/images/2016/03/12751465_202678110091142_997768928_n.jpg)
+![Getting up close and personal with Docker Swarm Mode](https://pbs.twimg.com/media/CrVYYJxUIAAyuuk.jpg)
 
 ## Feedback & questions
 
@@ -50,6 +50,8 @@ If you want to see what Docker can do on the Pi, or just want to learn about it 
 * [Get Started with Docker 1.12 on Raspberry Pi](http://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/)
 
 ### New Swarm Mode
+
+![Docker Swarm, originally 5 nodes, now 7](http://blog.alexellis.io/content/images/2016/03/12751465_202678110091142_997768928_n.jpg)
 
 Check out my video where I set up a swarm with 7 different Raspbery Pi 2s and demo the Swarm Visualizer project.
 
