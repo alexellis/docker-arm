@@ -1,11 +1,22 @@
 Docker on ARM
 =================
 
-After a lot of hard work it became official and Docker came to the Raspberry Pi. You can read more it on the Raspberry Pi blog which links to various tutorials I've written this year. In this repository you will find a curated list of links for getting started or going deeper with Docker and Swarm on the Pi. 
+After a lot of hard work it became official and Docker came to the Raspberry Pi. You can read more about it on the Raspberry Pi blog which links to various tutorials I've written this year.
+
+In this repository you will find:
+
+* a curated list of links for getting started with Docker on Pi
+* tutorials around Swarm and Swarm Mode
+* ARM specific images to get you up and running in no time.
 
 * [Docker comes to the Raspberry Pi](https://www.raspberrypi.org/blog/docker-comes-to-raspberry-pi/)
 
 ![Docker Swarm, originally 5 nodes, now 7](http://blog.alexellis.io/content/images/2016/03/12751465_202678110091142_997768928_n.jpg)
+
+## Feedback & questions
+
+I'm a [Docker Captain](http://blog.alexellis.io/follow-all-captains/) so I'd love to hear from you with your questions, comments and suggestions on Twitter [@alexellisuk](https://twitter.com/alexellisuk) or through the blog comments sections.
+
 
 ## ARM specific images
 
@@ -13,7 +24,7 @@ If you want to try Docker or Docker Swarm on ARM or are already using it, then y
 
 * `/images`
 
-No official Docker images work on the ARM architecture because they contain binaries built for x64 (regular PCs). I've curated separate images for PI 2/3 and PI Zero.
+No official Docker images work on the ARM architecture because they contain binaries built for x64 (regular PCs). I've curated separate images for PI 2/3 and PI Zero. You can read more about this in the [Getting Started Tutorial](http://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/)
 
 * Nginx
 * Go 1.5
@@ -35,7 +46,7 @@ Since I started this repository the installation of Docker and its native cluste
 
 If you want to see what Docker can do on the Pi, or just want to learn about it then head over to this guide:
 
-* [http://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/](Get Started with Docker 1.12 on Raspberry Pi)
+* [Get Started with Docker 1.12 on Raspberry Pi](http://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/)
 
 ### New Swarm Mode
 
@@ -58,7 +69,7 @@ One of the most exciting ways Docker and the Raspberry Pi work together is throu
 
 For a prime example see my Dockercon 2016 Demo of a set of IoT sensors:
 
-* (http://blog.alexellis.io/dockercon-2016-speaker-notes/)[Dockercon Speaker notes and demo overview]
+* [Dockercon Speaker notes and demo overview](http://blog.alexellis.io/dockercon-2016-speaker-notes/)
 
 ### Classic Docker Swarm
 
@@ -74,3 +85,9 @@ Follow this quick-start guide to get Docker and/or Swarm up and running on your 
 
 * [Quick-start Docker/Swarm on PI Zero Tutorial](ZERO.md)
 
+### Looking for the old README for this repo?
+
+Head over to [README_CLASSIC.md](https://github.com/alexellis/docker-arm/blob/master/README_CLASSIC.md)
+
+
+Copyright Alex Ellis 2016
