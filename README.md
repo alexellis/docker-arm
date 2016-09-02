@@ -51,6 +51,8 @@ If you want to see what Docker can do on the Pi, or just want to learn about it 
 
 ### New Swarm Mode
 
+![Docker Swarm, originally 5 nodes, now 7](http://blog.alexellis.io/content/images/2016/03/12751465_202678110091142_997768928_n.jpg)
+
 Check out my video where I set up a swarm with 7 different Raspbery Pi 2s and demo the Swarm Visualizer project.
 
 * [Live Deep Dive video of Swarm Mode](http://blog.alexellis.io/live-deep-dive-pi-swarm/)
