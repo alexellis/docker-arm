@@ -56,6 +56,30 @@ There is no .img or .iso file available for ALARM, instead we will need another 
 
 Head over to https://archlinuxarm.org/platforms/armv6/raspberry-pi and click the *Installation* tab and follow the instructions.
 
+#### Additional Steps
+These are some additional steps which were needed to get Arch working. 
+
+**Make sure systemd starts usb0 for you.**
+
+Add a file called usb0.network to /etc/systemd/network/
+```
+[Match]
+Name=usb0
+
+[Network]
+Address=192.168.2.2/24
+Gateway=192.168.2.1
+DNS=8.8.8.8
+IPForward=ipv4
+```
+There are example values to use a static address. If you'll be using DHCP replace Address and down with:
+```
+DHCP=yes
+```
+**Get SSHD working**
+
+The base arch rpi may have bad ssh keys. remove all keys and public key files from /etc/ssh/ before attempting to ssh.
+
 ### Step 2
 
 **Booting and configuring network**
