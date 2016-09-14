@@ -189,6 +189,8 @@ Install Apache Bench (apache-utils) and then generate some load:
 
 ```
 $ ab -n 100 -c 1 http://localhost:9000/guid
+
+Time taken for tests:   1.186 seconds
 Requests per second:    84.32 [#/sec] (mean)
 ```
 
@@ -196,6 +198,8 @@ Requests per second:    84.32 [#/sec] (mean)
 
 ```
 $ ab -n 100 -c 5 http://localhost:9000/guid
+
+Time taken for tests:   0.312 seconds
 Requests per second:    320.91 [#/sec] (mean)
 ```
 
