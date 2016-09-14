@@ -216,7 +216,8 @@ cd0zxm8lw4gruqgey8q6l1mp9    otg5      Ready   Active
 
 $ docker service ps guid
 
-ID                         NAME    IMAGE                              NODE      DESIRED STATE  CURRENT STATE           96hrursmfo3llth0xm5t46yup  guid.1  alexellis2/guid-generator-arm:0.1  otg4      Running        Running 28 minutes ago  
+ID                         NAME    IMAGE                              NODE      DESIRED STATE  CURRENT STATE
+96hrursmfo3llth0xm5t46yup  guid.1  alexellis2/guid-generator-arm:0.1  otg4      Running        Running 28 minutes ago  
 f2aozh4z2y4fpnqm1lf5t7lth  guid.2  alexellis2/guid-generator-arm:0.1  otg5      Running        Running 18 minutes ago  
 9ztcdqki0immrr48duqm23tzf  guid.3  alexellis2/guid-generator-arm:0.1  otghost1  Running        Running 28 minutes ago  
 boakfkvh4oubzoq1jh9mjmddk  guid.4  alexellis2/guid-generator-arm:0.1  otg1      Running        Running 28 minutes ago  
