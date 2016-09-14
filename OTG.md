@@ -199,8 +199,28 @@ Requests per second:    84.32 [#/sec] (mean)
 ```
 $ ab -n 100 -c 5 http://localhost:9000/guid
 
-Time taken for tests:   0.312 seconds
-Requests per second:    320.91 [#/sec] (mean)
+Time taken for tests:   0.285 seconds
+Requests per second:    350.34 [#/sec] (mean)
+```
+
+Here's the example output of when I check on my nodes and service:
+
+```
+$ docker node ls
+ID                           HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
+0pkcm79ia9z4jwzxud33lnoin    otg3      Ready   Active        
+2ozapmh1q9e8k0zp8ep45hchb *  otghost1  Ready   Active        Leader
+a950k1fgru90rqx0w2b21et3t    otg1      Ready   Active        
+aggh44h8vv45pzkrqmw6jlz83    otg4      Ready   Active        
+cd0zxm8lw4gruqgey8q6l1mp9    otg5      Ready   Active   
+
+$ docker service ps guid
+
+ID                         NAME    IMAGE                              NODE      DESIRED STATE  CURRENT STATE           96hrursmfo3llth0xm5t46yup  guid.1  alexellis2/guid-generator-arm:0.1  otg4      Running        Running 28 minutes ago  
+f2aozh4z2y4fpnqm1lf5t7lth  guid.2  alexellis2/guid-generator-arm:0.1  otg5      Running        Running 18 minutes ago  
+9ztcdqki0immrr48duqm23tzf  guid.3  alexellis2/guid-generator-arm:0.1  otghost1  Running        Running 28 minutes ago  
+boakfkvh4oubzoq1jh9mjmddk  guid.4  alexellis2/guid-generator-arm:0.1  otg1      Running        Running 28 minutes ago  
+6krhnkybhej7ygd1io0kqphsx  guid.5  alexellis2/guid-generator-arm:0.1  otg3      Running        Running 28 minutes ago  
 ```
 
 ### Feedback
