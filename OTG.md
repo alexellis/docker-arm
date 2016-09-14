@@ -164,6 +164,8 @@ To configure your swarm log into the host and type in `docker swarm init`. This 
 
 Finally, follow the [Docker Swarm Mode on the Pi](http://blog.alexellis.io/live-deep-dive-pi-swarm/) to start tasking your super computer.
 
+I also have a set of [Swarm Mode tests](https://github.com/alexellis/swarmmode-tests/tree/master/arm) that you can run through to check that everything's OK. And if you are running into trouble then a reboot does normally help resolve OTG issues for me.
+
 ### Feedback
 
 #### Got problems?
