@@ -1,7 +1,7 @@
 
 ## Create a Raspberry Pi OTG network
 
-We are going to base these instructions around Rasbpian Jessie light as the OTG host (I've tested with a Pi3) and the OTG guests (Pi Zeros).
+We are going to base these instructions around Rasbpian Jessie light as the OTG host (I've tested with a Pi3) and the OTG guests (Pi Zeros). If you find this guide helpful, please click the **Star** button.
 
 Check out the accompanying blog post for this guide:
 
@@ -167,6 +167,8 @@ Finally, follow the [Docker Swarm Mode on the Pi](http://blog.alexellis.io/live-
 I also have a set of [Swarm Mode tests](https://github.com/alexellis/swarmmode-tests/tree/master/arm) that you can run through to check that everything's OK. And if you are running into trouble then a reboot does normally help resolve OTG issues for me.
 
 ### Feedback
+
+If you find this guide helpful, please click the **Star** button.
 
 #### Got problems?
 
