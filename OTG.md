@@ -166,6 +166,39 @@ Finally, follow the [Docker Swarm Mode on the Pi](http://blog.alexellis.io/live-
 
 I also have a set of [Swarm Mode tests](https://github.com/alexellis/swarmmode-tests/tree/master/arm) that you can run through to check that everything's OK. And if you are running into trouble then a reboot does normally help resolve OTG issues for me.
 
+**Super quick test (enter instructions on the host)**
+
+This creates a micro-service which generates a GUID and also returns the container ID that generated it. You can use this to track down which Pi generated the GUID.
+
+```
+$ docker network create --driver overlay --subnet 20.0.12.0/24 armnet
+$ docker service create --network armnet --replicas=5 --name guid -p 9000:9000 alexellis2/guid-generator-arm:0.1
+```
+
+Check the output of `docker service ps guid` until you see all the tasks are started.
+
+Now hit the endpoint:
+
+```
+$ curl -4 localhost:9000/guid
+```
+
+Install Apache Bench (apache-utils) and then generate some load:
+
+100 requests, 1 concurrently:
+
+```
+$ ab -n 100 -c 1 http://localhost:9000/guid
+Requests per second:    84.32 [#/sec] (mean)
+```
+
+100 requests, 5 concurrently:
+
+```
+$ ab -n 100 -c 5 http://localhost:9000/guid
+Requests per second:    320.91 [#/sec] (mean)
+```
+
 ### Feedback
 
 If you find this guide helpful, please click the **Star** button.
