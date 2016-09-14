@@ -163,3 +163,13 @@ To install Docker on each Pi Zero follow the guide here:
 To configure your swarm log into the host and type in `docker swarm init`. This will create a join token that can be passed into each of your Pi Zeros over SSH. Once you have joined each of your Pi Zeros use the `docker node ls` command to view the list of connected nodes.
 
 Finally, follow the [Docker Swarm Mode on the Pi](http://blog.alexellis.io/live-deep-dive-pi-swarm/) to start tasking your super computer.
+
+### Feedback
+
+#### Got problems?
+
+Please get in touch on Twitter [@alexellisuk](https://twitter.com/alexellisuk) or through the blog post.
+
+#### Want to make a PR?
+
+Feedback is welcome, so please raise an issue so we can discuss the change.
