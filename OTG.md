@@ -1,43 +1,58 @@
 
 ## Create a Raspberry Pi OTG network
 
-We are going to base these instructions around Rasbpian Jessie light as the OTG host and the OTG guests.
+We are going to base these instructions around Rasbpian Jessie light as the OTG host (I've tested with a Pi3) and the OTG guests (Pi Zeros).
 
-### 1.0 Prepare your Pi Zero
+Check out the accompanying blog post for this guide:
 
-Flash the latest Jessie Lite image to your SD card, then mount the filesystem on a Linux PC or Raspberry Pi.
+* [Build your PiZero Swarm with OTG networking](http://blog.alexellis.io/pizero-otg-swarm/)
+
+### 1.0 Prepare your Pi Zeros
+
+* Flash the Jessie Lite image to your SD card.
+
+* Boot up the Pi Zero and shut it down again - this lets Raspbian resize the filesystem.
+
+* Mount the two partitions on a computer or Pi running Linux and edit /etc/hosts and /etc/hostname. I've called my Zeros otg1, otg2, otg3 etc.
 
 #### Enable the OTG Kernel modules
 
 We turn on OTG networking through the ether_g / dwc2 modules. These are already present on your image so you just need to update `cmdline.txt` to tell the Kernel how to access them.
 
-In mount partition 1 and edit `/boot/cmdline.txt`
+Mount partition 1 and edit `/boot/cmdline.txt`
 
-Before
+We need to add the following after the rootwait instruction:
+
+* `g_ether.host_addr=00:22:82:ff:ff:**01**`
+
+This is the MAC address of the virtual ethernet adapter on the host computer (Pi 2/ Pi 3)
+
+* `g_ether.dev_addr=00:22:82:ff:ff:**11**`
+
+This is the MAC address of the virtual ethernet adapter on the guest (Pi Zero)
+
+For each additional Pi Zero you add edit `cmdline.txt` file and increment both numbers: i.e.
+
+* 01 becomes 02
+ * `g_ether.host_addr=00:22:82:ff:ff:**02**`
+
+* 11 becomes 12
+ * `g_ether.dev_addr=00:22:82:ff:ff:**12**`
+
+
+*When you save the file, make sure all instructions are on one line only*
+
+Before:
 
 ```
 dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait
 ```
 
-After
+After:
 
 ```
 dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait modules-load=dwc2,g_ether g_ether.host_addr=00:22:82:ff:ff:01 g_ether.dev_addr=00:22:82:ff:ff:11 quiet
 ```
-
-We added the following after the rootwait instruction:
-
-* g_ether.host_addr=00:22:82:ff:ff:**01**
-
-This is the MAC address of the virtual ethernet adapter on the host computer (Pi 2/ Pi 3)
-
-* g_ether.dev_addr=00:22:82:ff:ff:**11**
-
-This is the MAC address of the virtual ethernet adapter on the guest (Pi Zero)
-
-For each additional Pi Zero you add edit cmdline.txt file and increment 01 to 02, 03 etc and 11 to 12, 13 etc.
-
-*Make sure all instructions are on one line only*
 
 #### Enable the OTG overlay
 
