@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"net/http"
 	"os"
@@ -10,6 +11,11 @@ import (
 	"github.com/twinj/uuid"
 )
 
+type GuidReponse struct {
+	Guid        string `json:"guid"`
+	ContainerId string `json:"container"`
+}
+
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Routes: /guid/\n"))
 }
@@ -17,8 +23,12 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 func GuidHandler(w http.ResponseWriter, r *http.Request) {
 	id := uuid.NewV4()
 	containerId, _ := os.Hostname()
-	json := "{\"guid\":" + uuid.Formatter(id, uuid.FormatCanonicalCurly) + ",\"container\":\"" + containerId + "\"}"
-	w.Write([]byte(json + "\n"))
+	guidReponse := GuidReponse{}
+	guidReponse.Guid = uuid.Formatter(id, uuid.FormatCanonicalCurly)
+	guidReponse.ContainerId = containerId
+
+	jsonValue, _ := json.Marshal(guidReponse)
+	w.Write([]byte(jsonValue))
 }
 
 func main() {
