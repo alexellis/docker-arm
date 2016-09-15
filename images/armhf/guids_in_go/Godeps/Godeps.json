@@ -1,0 +1,22 @@
+{
+	"ImportPath": "github.com/alexellis/guids_in_go",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v74",
+	"Deps": [
+		{
+			"ImportPath": "github.com/gorilla/context",
+			"Comment": "v1.1-7-g08b5f42",
+			"Rev": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42"
+		},
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.1-25-g0a192a1",
+			"Rev": "0a192a193177452756c362c20087ddafcf6829c4"
+		},
+		{
+			"ImportPath": "github.com/twinj/uuid",
+			"Comment": "0.10.0-96-g7bbe408",
+			"Rev": "7bbe408d339787c56ec15568c947c0959db1b275"
+		}
+	]
+}
