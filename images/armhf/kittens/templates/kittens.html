@@ -1,0 +1,23 @@
+<html>
+<head>
+ <style>
+ h2 {
+  color: white;
+ }
+ body {
+   font-family: Helvetica, Arial, sans-serif;
+   background-color: black; 
+ }
+
+ #container {
+   text-align: center;
+ }
+ </style>
+</head>
+<body>
+ <div id="container">
+   <img src="http://thecatapi.com/api/images/get?format=src&type=gif"></img>
+ <h2>I'm running on: {{ props.hostname }}</h2>
+ </div>
+</body>
+</html>
