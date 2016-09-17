@@ -6,3 +6,4 @@ WORKDIR /root/explorer-hat/library/
 RUN ls
 RUN python2 ./setup.py install
 
+CMD ["/bin/bash"]
