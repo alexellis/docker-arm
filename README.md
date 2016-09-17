@@ -66,6 +66,12 @@ Mano Marks put together a ReactJS [Swarm Visualizer tool](https://github.com/Man
 
 * [Swarm Visualizer](https://github.com/ManoMarks/docker-swarm-visualizer)
 
+### OTG networking for Raspberry Pi
+
+Set up Swarm Mode with OTG networking, look ma, no ethernet!
+
+* [Build your PiZero Swarm with OTG networking](http://blog.alexellis.io/pizero-otg-swarm/)
+
 ### Physical Hardware and GPIO
 
 One of the most exciting ways Docker and the Raspberry Pi work together is through GPIO. You can access hardware such as the products by [Pimoroni](https://shop.pimoroni.com) through containers and build/ship/run/deploy your apps.
