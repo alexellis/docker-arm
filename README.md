@@ -19,37 +19,17 @@ If you've not read the Raspberry Pi blog post then you can see it here:
 
 I'm a [Docker Captain](http://blog.alexellis.io/follow-all-captains/) so I'd love to hear from you with your questions, comments and suggestions on Twitter [@alexellisuk](https://twitter.com/alexellisuk) or through the blog comments sections.
 
-
-## ARM specific images
-
-If you want to try Docker or Docker Swarm on ARM or are already using it, then you will find these resources useful:
-
-* `/images`
-
-No official Docker images work on the ARM architecture because they contain binaries built for x64 (regular PCs). I've curated separate images for PI 2/3 and PI Zero. You can read more about this in the [Getting Started Tutorial](http://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/)
-
-* Nginx
-* Go 1.5
-* Go 1.6
-* Consul
-* Redis
-* Node.js 4.x
-* Several examples of GPIO
-* Build Docker itself
-
-Contributions are welcome, please open an issue with your suggestion and once confirmed I'll be happy to merge the changes. You can also find a number of additional images maintained by the [Hypriot team](https://twitter.com/hypriottweets).
-
-## Lead articles
+# Lead articles
 
 Since I started this repository the installation of Docker and its native clustering modes has changed. This section gives you a summary of tutorials for each part.  
 
-### Getting started with Docker on the Pi
+## Getting started with Docker on the Pi
 
 If you want to see what Docker can do on the Pi, or just want to learn about it then head over to this guide:
 
 * [Get Started with Docker 1.12 on Raspberry Pi](http://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/)
 
-### New Swarm Mode
+## New Swarm Mode
 
 ![Docker Swarm, originally 5 nodes, now 7](http://blog.alexellis.io/content/images/2016/03/12751465_202678110091142_997768928_n.jpg)
 
@@ -66,13 +46,13 @@ Mano Marks put together a ReactJS [Swarm Visualizer tool](https://github.com/Man
 
 * [Swarm Visualizer](https://github.com/ManoMarks/docker-swarm-visualizer)
 
-### OTG networking for Raspberry Pi
+## OTG networking for Raspberry Pi
 
 Set up Swarm Mode with OTG networking, look ma, no ethernet!
 
 * [Build your PiZero Swarm with OTG networking](http://blog.alexellis.io/pizero-otg-swarm/)
 
-### Physical Hardware and GPIO
+## Physical Hardware and GPIO
 
 One of the most exciting ways Docker and the Raspberry Pi work together is through GPIO. You can access hardware such as the products by [Pimoroni](https://shop.pimoroni.com) through containers and build/ship/run/deploy your apps.
 
@@ -93,6 +73,25 @@ This article was retweeted by @Docker on Mar 31 2016, so head over to the blog a
 Follow this quick-start guide to get Docker and/or Swarm up and running on your PI Zeros right away.
 
 * [Quick-start Docker/Swarm on PI Zero Tutorial](ZERO.md)
+
+# ARM specific images
+
+If you want to try Docker or Docker Swarm on ARM or are already using it, then you will find these resources useful:
+
+* `/images`
+
+No official Docker images work on the ARM architecture because they contain binaries built for x64 (regular PCs). I've curated separate images for PI 2/3 and PI Zero. You can read more about this in the [Getting Started Tutorial](http://blog.alexellis.io/getting-started-with-docker-on-raspberry-pi/)
+
+* Nginx
+* Go 1.5
+* Go 1.6
+* Consul
+* Redis
+* Node.js 4.x
+* Several examples of GPIO
+* Build Docker itself
+
+Contributions are welcome, please open an issue with your suggestion and once confirmed I'll be happy to merge the changes. You can also find a number of additional images maintained by the [Hypriot team](https://twitter.com/hypriottweets).
 
 ### Looking for the old README for this repo?
 
