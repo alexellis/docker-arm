@@ -55,7 +55,7 @@ dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 roo
 
 There is another file we need to edit while we have the boot partition still mounted.
 
-Add this to the end of the `/etc/config.txt` file on two separate lines. The first line enables the OTG overlay. The second line makes slightly more memory available to any services we may want to run such as Docker.
+Add this to the end of the `/boot/config.txt` file on two separate lines. The first line enables the OTG overlay. The second line makes slightly more memory available to any services we may want to run such as Docker.
 
 ```
 dtoverlay=dwc2
