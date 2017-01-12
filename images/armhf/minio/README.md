@@ -1,7 +1,7 @@
 Minio on ARM
 ============
 
-This Dockerfile builds a container to run Minio - an S3 compatible object storage server.
+This Dockerfile builds a container to run [Minio](https://minio.io) - an S3 compatible object storage server.
 
 Use /objects/ to mount a volume and check docker logs for the access keys.
 
@@ -13,8 +13,12 @@ Use /objects/ to mount a volume and check docker logs for the access keys.
 # docker logs minio
 ```
 
-Remember to use the IP address of the Raspberry Pi, not the Docker container when you use the `mc` Minio Client tool to connect and upload / query files/objects.
+Remember to use the IP address of the Raspberry Pi, not the Docker container when you use the `mc` Minio Client tool to connect and upload / query files/objects. Get started on the [Minio website now](https://minio.io).
 
-![](https://ton.twitter.com/i/ton/data/dm/819333329728184324/819333280529022977/lU_Bxj5w.png)
+**Not got Docker on your Pi yet?**
+
+Type in `curl -sSL get.docker.com | sh` and you'll be there in no time. 
+
+![](https://pbs.twimg.com/media/C17cDK4XcAAKLok.png:large)
 
 *My Mac Mini uploading my source-code to my Pi 3*
