@@ -18,8 +18,15 @@ Remember to use the IP address of the Raspberry Pi, not the Docker container whe
 
 **Not got Docker on your Pi yet?**
 
+You can learn Docker with my [Hands-On video and tutorial here](http://blog.alexellis.io/hands-on-docker-raspberrypi/) or just go ahead and install it below:
+
 Type in `curl -sSL get.docker.com | sh` and you'll be there in no time. 
 
 ![](https://pbs.twimg.com/media/C17cDK4XcAAKLok.png:large)
 
 *My Mac Mini uploading my source-code to my Pi 3*
+
+**Want to create a home NAS with your Pi?**
+
+[Create a hardened Raspberry Pi NAS](http://blog.alexellis.io/hardened-raspberry-pi-nas/)
+
