@@ -62,6 +62,10 @@ dtoverlay=dwc2
 gpu_mem=16
 ```
 
+#### Enable SSH
+
+Now to enable SSH create a file named `/boot/ssh` with no extension. If you're on a Mac you can probably do this: `touch /Volumes/boot/ssh`.
+
 *Now unmount the boot partition.*
 
 #### Set the hostname
