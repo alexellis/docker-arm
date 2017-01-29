@@ -15,9 +15,13 @@ If you've not read the Raspberry Pi blog post then you can see it here:
 
 ![Getting up close and personal with Docker Swarm Mode](https://pbs.twimg.com/media/CrVYYJxUIAAyuuk.jpg)
 
-## Feedback & questions
+### Feedback & questions
 
 I'm a [Docker Captain](http://blog.alexellis.io/follow-all-captains/) so I'd love to hear from you with your questions, comments and suggestions on Twitter [@alexellisuk](https://twitter.com/alexellisuk) or through the blog comments sections.
+
+### License & contributions
+
+This content is licensed under GPLv3. Contributions to keep Dockerfiles up to date and relevant are welcome - also happy to extend the coverage and take updates to the guides. Please just raise an issue before the PR for discussion.
 
 # Lead articles
 
