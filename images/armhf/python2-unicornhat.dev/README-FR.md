@@ -29,8 +29,8 @@ Ces leds sont adressables individuellement (ce sont des WS2812B).
 
 C'est un produit de [Pimoroni](https://shop.pimoroni.com) qui existe en deux versions :
 
-	* Le [Unicorn pHat](http://shop.pimoroni.com/products/unicorn-phat) que j'ai testé, contient 8x4 leds, et est du même format que votre Raspberry Pi Zero
-	* Le [Unicorn Hat](http://shop.pimoroni.com/products/unicorn-hat) est destiné au Raspberry Pi 2 et 3, plus grands, et dispose de 8x8 leds
+* Le [Unicorn pHat](http://shop.pimoroni.com/products/unicorn-phat) que j'ai testé, contient 8x4 leds, et est du même format que votre Raspberry Pi Zero
+* Le [Unicorn Hat](http://shop.pimoroni.com/products/unicorn-hat) est destiné au Raspberry Pi 2 et 3, plus grands, et dispose de 8x8 leds
 
 	
 @actuino
