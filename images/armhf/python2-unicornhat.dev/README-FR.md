@@ -19,6 +19,8 @@ Le répertoire par défaut est celui des exemples. Vous pouvez donc directement 
 	python rainbow.py
 	
 Voir le [listing complet des exemples](https://github.com/pimoroni/unicorn-hat/tree/master/examples)
+
+Certains exemples requièrent des librairies python (numpy par exemple) qui n'ont pas été incluses par défaut.
 	
 A propos des Unicorn Hat et pHat
 --------------------------------

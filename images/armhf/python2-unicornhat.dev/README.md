@@ -19,6 +19,8 @@ The default dir is the examples one, so you can test drive the demos, for instan
 	python rainbow.py
 	
 See the full [examples listing](https://github.com/pimoroni/unicorn-hat/tree/master/examples)
+
+Note that some examples require extra python libs that were not included (numpy is one)
 	
 About the Unicorn Hat and pHat
 ------------------------------

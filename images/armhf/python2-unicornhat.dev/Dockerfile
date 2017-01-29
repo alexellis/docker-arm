@@ -8,6 +8,8 @@ RUN  pip install unicornhat &&  \
   rm -rf /var/lib/apt/lists/* && \
   apt-get -qy clean all
 
+ENTRYPOINT []  
+  
 WORKDIR /root/unicorn-hat/examples/
 
 CMD ["/bin/bash"]
