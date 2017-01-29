@@ -10,7 +10,7 @@ The Pimoroni library for Unicorn Hat and pHat is installed.
 
 This image has to be run with the `--privileged` option like so:
 
-    docker run --privileged alexellis2/python2-unicornhat-dev:2 
+    docker run -it --privileged alexellis2/python2-unicornhat-dev:2 
 
 The library can auto-detect if you're using a Unicorn HAT or a Unicorn pHAT.
 

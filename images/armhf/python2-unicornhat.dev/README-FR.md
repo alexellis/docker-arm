@@ -10,7 +10,7 @@ La librairie Pimoroni unifiée pour les Unicorn Hat et pHat est installée.
 
 Cette image doit être lancée avec l'option `--privileged` , comme suit :
 
-    docker run --privileged alexellis2/python2-unicornhat-dev:2 
+    docker run -it --privileged alexellis2/python2-unicornhat-dev:2 
 
 La librairie détecte automatiquement le type de shield employé.
 
