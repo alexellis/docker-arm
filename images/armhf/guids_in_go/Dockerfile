@@ -1,6 +1,10 @@
-FROM resin/rpi-raspbian:latest
+FROM alexellis2/go-armhf:1.7.4
+WORKDIR /go/src/github.com/alexellis/guidsingo
 
-ADD ./guids_in_go ./guids_in_go
+COPY main.go .
+RUN go get
+RUN go install
 
 EXPOSE 9000
-CMD ["./guids_in_go"]
+
+CMD ["guidsingo"]
