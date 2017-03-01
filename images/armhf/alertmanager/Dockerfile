@@ -1,7 +1,7 @@
-FROM armhf/alpine:latest
+FROM armhf/alpine:3.5
 workdir /root
 RUN apk add --update libarchive-tools
-ADD https://github.com/prometheus/alertmanager/releases/download/v0.5.1/alertmanager-0.5.1.linux-armv7.tar.gz /root/
+ADD https://github.com/prometheus/alertmanager/releases/download/v0.5.1/alertmanager-0.5.1.linux-armv6.tar.gz /root/
 RUN bsdtar -xvf *.tar.gz -C ./ --strip-components=1
 RUN mkdir /etc/alertmanager
 

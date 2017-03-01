@@ -1,8 +1,10 @@
-FROM armhf/alpine:latest
+FROM armhf/alpine:3.5
+
 workdir /root
 RUN apk add --update libarchive-tools
-ADD https://github.com/prometheus/prometheus/releases/download/v1.4.1/prometheus-1.4.1.linux-armv7.tar.gz /root/
-RUN bsdtar -xvf prometheus-1.4.1.linux-armv7.tar.gz -C ./ --strip-components=1
+
+ADD https://github.com/prometheus/prometheus/releases/download/v1.5.2/prometheus-1.5.2.linux-armv6.tar.gz /root/
+RUN bsdtar -xvf prometheus-*.tar.gz -C ./ --strip-components=1
 
 RUN mkdir -p /usr/share/prometheus
 RUN mkdir -p /etc/prometheus
