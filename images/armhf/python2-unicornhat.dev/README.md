@@ -1,10 +1,7 @@
-Dev Docker Image for Unicorn HAT on Raspberry PI
+Unicorn HAT
 ================================================
 
-This image does include a full Python 2.7 dev stack, with pip as well as Git and build-essentials.
-It was not optimised for space.
-
-Tested on a Raspberry Pi Zero, but should be compatible will the whole family.
+This image includes a full Python 2.7 dev stack, with `pip` as well as `git` and `build-essentials`. (not optimised for size)
 
 The Pimoroni library for Unicorn HAT and pHAT is installed.
 
