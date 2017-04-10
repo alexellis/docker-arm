@@ -72,7 +72,7 @@ Now to enable SSH create a file named `/boot/ssh` with no extension. If you're o
 
 Now mount the second partition of the SD card and replace *raspberrypi* with *worker1* or *worker2* in `/etc/hosts` and `/etc/hostname`.
 
-*While you are at it you can also remove the login message with `rf -rf /etc/motd`, or replace it with your own message.*
+*While you are at it you can also remove the login message with `rm -rf /etc/motd`, or replace it with your own message.*
 
 #### Set a static IP address
 
