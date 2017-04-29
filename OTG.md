@@ -149,6 +149,10 @@ static domain_name_servers=8.8.8.8
 You may want to enable your Pi Zeros to reach the Internet, if that is the case then the following `iptables` rules worked for me. There may be a better way of doing this, but it will get you started:
 
 ```
+$ iptables -A FORWARD -i wlan0 -j ACCEPT
+```
+
+```
 $ iptables -t nat -A POSTROUTING ! -d 10.0.11.0/24 -o eth0 -j MASQUERADE
 $ iptables -t nat -A POSTROUTING ! -d 10.0.12.0/24 -o eth0 -j MASQUERADE
 $ iptables -t nat -A POSTROUTING ! -d 10.0.13.0/24 -o eth0 -j MASQUERADE
