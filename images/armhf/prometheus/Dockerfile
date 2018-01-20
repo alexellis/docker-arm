@@ -3,7 +3,7 @@ FROM armhf/alpine:3.5
 workdir /root
 RUN apk add --update libarchive-tools
 
-ADD https://github.com/prometheus/prometheus/releases/download/v1.5.2/prometheus-1.5.2.linux-armv6.tar.gz /root/
+ADD https://github.com/prometheus/prometheus/releases/download/v2.1.0/prometheus-2.1.0.linux-armv6.tar.gz /root/
 RUN bsdtar -xvf prometheus-*.tar.gz -C ./ --strip-components=1
 
 RUN mkdir -p /usr/share/prometheus
@@ -21,8 +21,7 @@ EXPOSE     9090
 VOLUME     [ "/prometheus" ]
 WORKDIR    /prometheus
 ENTRYPOINT [ "/bin/prometheus" ]
-CMD        [ "-config.file=/etc/prometheus/prometheus.yml", \
-             "-storage.local.path=/prometheus", \
-             "-web.console.libraries=/usr/share/prometheus/console_libraries", \
-             "-web.console.templates=/usr/share/prometheus/consoles" ]
-
+CMD        [ "--config.file=/etc/prometheus/prometheus.yml", \
+             "--storage.tsdb.path=/prometheus", \
+             "--web.console.libraries=/usr/share/prometheus/console_libraries", \
+             "--web.console.templates=/usr/share/prometheus/consoles" ]
