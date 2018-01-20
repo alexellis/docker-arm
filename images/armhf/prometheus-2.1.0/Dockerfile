@@ -1,4 +1,4 @@
-FROM armhf/alpine:3.5
+FROM armhf/alpine:3.6
 
 workdir /root
 RUN apk add --update libarchive-tools
