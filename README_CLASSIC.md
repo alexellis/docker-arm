@@ -9,7 +9,7 @@ This repository was commissioned to support a tutorial published in [Issue 163 o
 
 ### If you are following the Linux Developer and User tutorial
 
-####[Magazine tutorial](LUD.md)
+#### [Magazine tutorial](LUD.md)
 
 I make the case for Docker Swarm on the Raspberry PI. We walk through fully configuring Arch Linux ARM, we install Docker, then rebuild it from the latest source. Then we go on to build specific images for ARM: Swarm, Consul, Redis, Node.js etc. Then we starting the Swarm, check the nodes and run a distributed web application with a load-balancer.
 
